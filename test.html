@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>test</title>
+	<style>
+		.img{
+			height: 200px;
+			width: 200PX;
+			position: relative;
+		}
+		img{
+			height: 100%;
+			width: 100%;
+		}
+		.img:after{
+			content: " ";
+			position: absolute;
+			top: 75px;
+			left: 75px;
+			border-radius:50%;
+			height: 50px;
+			width: 50px;
+			background: red;
+			display: block;
+			opacity: 0.5;
+			animation: pop 1.5s infinite; 
+		}
+		@keyframes pop {
+			0%{opacity: 0.3; transform:scale(1);}
+			/*25%{opacity: 0.5; transform:scale(0.5);}*/
+			/*50%{opacity: 0;}*/
+			/*75%{opacity: 0.5; transform:scale(0.5);}*/
+			100%{opacity: 0;transform:scale(2);}
+		}
+	</style>
+</head>
+<body>
+	<div class="img">
+		<img src="sam1.jpg" alt="">
+	</div>
+	
+	<script>
+		var img;
+		img = document.querySelector("img");
+		img.addEventListener("click", change);
+		function change(){
+			img.src="sam2.png";
+		}
+	</script>
+</body>
+</html>
